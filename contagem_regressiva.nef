@@ -1,0 +1,15 @@
+; Programa: Contagem Regressiva
+; Autor: Stefany dos Santos
+; Data: 18/09/2025
+
+INICIO:     LDA INICIAL     ; Carrega o valor do rótulo inicial
+
+LOOP:       STA ATUAL       ; Armazena o valor do rótulo atual para visualizacao no acc
+            SUB UM          ; Subtrai do valor no acumulador neste caso 1 armazenado no rótulo UM  
+            JNZ LOOP        ; Jump if Not Zero Se o resultado NAO for zero, volta para o rotulo LOOP
+
+FIM:        HLT             ; Se for zero, o loop acaba e o programa para
+
+INICIAL:    DB 5            ; O numero para iniciar a contagem
+UM:         DB 1            ; O valor 1, para usar na subtracao
+ATUAL:      DB 0            ; Local que sera atualizado a cada passo do loop
